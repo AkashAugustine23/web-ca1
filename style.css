@@ -1,0 +1,494 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Background Image */
+  .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./modern-business-building-scenery-touching-sky.jpg'); 
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.6;
+  }
+  
+  /* Carousel */
+  #slideshow {
+    position: relative;
+    max-width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  #slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  #slideshow img.active {
+    opacity: 1;
+  }
+  /* Navbar */
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+  }
+  /* Logo Section */
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 40px;  
+    height: auto;
+    margin-right: 10px;  
+    border-radius: 50%;
+  }
+  .logo a {
+    font-size: 1.5em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-container input {
+    padding: 8px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+  }
+  
+  .search-container button {
+    padding: 8px 12px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .search-container button:hover {
+    background-color: #777;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #ddd;
+  }
+  
+  /* Dropdown Menu */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropbtn {
+    background-color: #333;
+    color: white;
+    padding: 8px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #555;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Responsive for Smaller Screens */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .search-container {
+      margin-top: 10px;
+    }
+  
+    .nav-links {
+      margin-top: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .dropdown-content {
+      position: static;
+      box-shadow: none;
+    }
+  }
+  /* Card Container */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+  }
+  
+  /* Card Style */
+  .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+  }
+  
+  .card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding: 15px;
+  }
+  
+  .card-content h3 {
+    font-size: 1.25em;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .card-content p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 8px 0;
+  }
+  
+  .card-content button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+  }
+  
+  .card-content button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive for Mobile */
+  @media (max-width: 768px) {
+    .card-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  /* Property Details Page Styling */
+  #property-details {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Property Carousel */
+  #property-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    margin-bottom: 20px;
+    scroll-snap-type: x mandatory;
+  }
+  
+  #property-carousel img {
+    height: 250px;
+    border-radius: 10px;
+    scroll-snap-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  #property-carousel img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Property Info */
+  #property-info h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  #property-info p {
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  #property-info p strong {
+    color: #333;
+  }
+  
+  /* Reserve Viewing Button */
+  .reserve-viewing{
+    background-color: #ff6347; 
+    color: white;
+    padding: 18px 30px;
+    border: none;
+    border-radius: 25px; 
+    cursor: pointer;
+    font-size: 1.2em; 
+    margin-top: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .reserve-viewing:hover {
+    background-color: #ff4500;
+    transform: scale(1.05); 
+  }
+  
+  /* Responsive for Mobile */
+  @media (max-width: 768px) {
+    #property-details {
+      padding: 15px;
+    }
+  
+    #property-info h2 {
+      font-size: 1.5em;
+    }
+  
+    #property-carousel img {
+      height: 200px;
+    }
+  }
+  /* Reservation Form Styling */
+  #reservation-form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  #reservation-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  #reservation-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #555;
+  }
+  
+  #reservation-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  #reservation-form button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  #reservation-form button:hover {
+    background-color: #218838;
+  }
+  /* Style the back button */
+.back-button {
+    background-color: #3498db; 
+    color: white; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 20px; 
+    text-decoration: none;
+  }
+  
+  .back-button:hover {
+    background-color: #2980b9; 
+  }
+  
+  /* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-links {
+    margin-top: 10px;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: #f39c12;
+  }
+  
+  .footer-content p {
+    margin: 0;
+    font-size: 14px;
+  }
+  .contact-info {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .contact-info a {
+    color: #f39c12;
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    color: #fff;
+  }
+  
+  .contact-info strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+  /* The Modal (background) */
+.popup {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); 
+  }
+  
+  /* Modal Content */
+  .popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  /* The Close Button */
+  .close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-btn:hover,
+  .close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Popup Button */
+  .popup button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .popup button:hover {
+    background-color: #218838;
+  }
+  
